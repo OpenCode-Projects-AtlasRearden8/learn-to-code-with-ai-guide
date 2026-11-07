@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 02: Variables — Teaching the Computer to Remember — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-02-variables-teaching-the-computer-to-remember">Chapter 02: Variables — Teaching the Computer to Remember</h1>
+<p>A <strong>variable</strong> is a labeled box in the computer's memory. You put something in it, give the box a name, and from then on you use the name whenever you want that something.</p>
+<p>Without variables a program is like doing math in your head all the way through. With variables, the program can remember.</p>
+<h2 id="creating-a-variable">Creating a variable</h2>
+<p>Type this in the console:</p>
+<pre><code class="lang-js">let name = "Sam"
+console.log(name)</code></pre>
+<p>Line one creates a box, labels it <code class="code-inline">name</code>, and puts the text <code class="code-inline">"Sam"</code> inside. Line two says "print the <em>contents</em> of the box named <code class="code-inline">name</code>" — no quotes around <code class="code-inline">name</code> here, because we want the value, not the word.</p>
+<p>What's inside can change:</p>
+<pre><code class="lang-js">name = "Dana"
+console.log(name)</code></pre>
+<p>Now the same box says <code class="code-inline">Dana</code>. The old content is gone. That's why it's called a <em>variable</em> — its value can vary.</p>
+<h2 id="let-and-const">let and const</h2>
+<p>JavaScript has two everyday keywords for making boxes:</p>
+<ul><li><code class="code-inline">let</code> — a box you're allowed to replace later ("let it change").</li><li><code class="code-inline">const</code> — short for <em>constant</em>: a box that never changes. Try to replace it</li></ul>
+<p>and you'll get an error.</p>
+<pre><code class="lang-js">let score = 0
+score = 10
+console.log(score)
+
+const daysInWeek = 7
+console.log(daysInWeek)</code></pre>
+<p>Now try this — and read the error carefully when it comes:</p>
+<pre><code class="lang-js">daysInWeek = 8</code></pre>
+<p>You'll see something like <code class="code-inline">TypeError: Assignment to constant variable.</code> This is not the computer being mean. It's the computer saying: "You promised that box would never change, and you tried to change it." Errors are information — Chapter 06 is all about reading them kindly.</p>
+<p>Rule of thumb: **use <code class="code-inline">const</code> by default**, and switch to <code class="code-inline">let</code> when you know you'll replace the value. It documents your intentions for free.</p>
+<h2 id="the-kinds-of-things-a-box-can-hold-data-types">The kinds of things a box can hold (data types)</h2>
+<p>Three types cover almost everything a beginner needs:</p>
+<p><strong>String</strong> — text, always in quotes:</p>
+<pre><code class="lang-js">const greeting = "Good morning"</code></pre>
+<p><strong>Number</strong> — no quotes, works with math:</p>
+<pre><code class="lang-js">const price = 4.5</code></pre>
+<p><strong>Boolean</strong> — only <code class="code-inline">true</code> or <code class="code-inline">false</code>. This is a box holding a yes/no answer:</p>
+<pre><code class="lang-js">const isRaining = false</code></pre>
+<p>How can you check what type is in a box? There's a built-in helper:</p>
+<pre><code class="lang-js">console.log(typeof greeting)
+console.log(typeof price)
+console.log(typeof isRaining)</code></pre>
+<h2 id="combining-strings-template-literals">Combining strings: template literals</h2>
+<p>You'll constantly want to build one sentence out of pieces. The clean way uses backticks (<code class="code-inline"></code> <code class="code-inline"> </code><code class="code-inline"> — the key above Tab) with </code>${...}<code class="code-inline"> to drop variables into text:</code></p>
+<pre><code class="lang-js">const name = "Dana"
+const cupsOfCoffee = 2
+console.log(`${name} has had ${cupsOfCoffee} cups of coffee today.`)</code></pre>
+<p>This prints <code class="code-inline">Dana has had 2 cups of coffee today.</code> Weeks from now, when you're building bigger things, you'll reach for this pattern every few minutes.</p>
+<h2 id="naming-boxes-have-names-for-humans-not-computers">Naming: boxes have names for humans, not computers</h2>
+<p>The computer doesn't care if your variable is called <code class="code-inline">x</code> or <code class="code-inline">cupsOfCoffeeToday</code>. But <em>you</em> — in ten minutes — definitely care. Names should say what's inside.</p>
+<ul><li>Good: <code class="code-inline">userName</code>, <code class="code-inline">totalPrice</code>, <code class="code-inline">isNurse</code></li><li>Not good: <code class="code-inline">x</code>, <code class="code-inline">thing1</code>, <code class="code-inline">stuff</code></li></ul>
+<p>The letter case convention in JavaScript is called <strong>camelCase</strong>: first word lowercase, later words capitalized, no spaces. <code class="code-inline">totalPrice</code>, not <code class="code-inline">total price</code>, <code class="code-inline">TotalPrice</code>, or <code class="code-inline">total_price</code>.</p>
+<h2 id="is-assignment-not-equals">= is assignment, not equals</h2>
+<p>One mental shift to make early: a single <code class="code-inline">=</code> does not mean "these are equal." It means "take the value on the right, and put it in the box on the left."</p>
+<pre><code class="lang-js">let total = 5
+total = total + 2</code></pre>
+<p>Line two looks like nonsense in math class, but in code it's perfectly sensible: "make <code class="code-inline">total</code> be its old value plus 2." Read <code class="code-inline">=</code> as <strong>"becomes"</strong> and a lot of early confusion evaporates. <code class="code-inline">total</code> is now <code class="code-inline">7</code>.</p>
+<h2 id="exercises-tiny-on-purpose">Exercises — tiny, on purpose</h2>
+<h3>Exercise 2.1 — introduce yourself</h3>
+<p>Make three variables and print one sentence using template literals:</p>
+<ul><li>a string with your first name</li><li>a number for how many years you've been at your current job (an estimate is fine)</li><li>a boolean for whether you drank coffee today</li></ul>
+<p>Print: "Hi, I'm NAME, I've been at my job NUMBER years, and COFFEE mentions coffee."</p>
+<p>Hint: booleans print as <code class="code-inline">true</code> or <code class="code-inline">false</code> — that's fine for now; making it print "yes/no" is a question for your AI tutor.</p>
+<h3>Exercise 2.2 — the running total</h3>
+<p>Make a <code class="code-inline">const</code> for a starting amount (say, <code class="code-inline">0</code>) — wait, you can't, you'll be changing it. Make it a <code class="code-inline">let</code>. Add 3 to it, then add 12.25 to it, then print the total. Then make a second line that prints how much it would be with a 2 dollar tip.</p>
+<h3>Exercise 2.3 — predict, then run</h3>
+<pre><code class="lang-js">const a = "5"
+console.log(a + 1)</code></pre>
+<p>Before running: does that print <code class="code-inline">6</code> or <code class="code-inline">51</code>? Why? If the answer surprises you, ask your AI: "Why does "5" + 1 give 51? What is type coercion, explained to a beginner?" Surprises are your syllabus.</p>
+<h2 id="try-asking-your-ai">Try asking your AI</h2>
+<ul><li>"What's the difference between let and const in JavaScript? Explain it with</li></ul>
+<p>a metaphor, then quiz me with two questions."</p>
+<ul><li>"Give me one tiny variable exercise where the mistake happens <em>before</em></li></ul>
+<p>running — a naming or type problem I have to spot by reading."</p>
+<ul><li>"Here's a line of my code: <code class="code-inline">total = total + 2</code>. Explain why the computer</li></ul>
+<p>doesn't get confused doing that."</p>
+<h2 id="check-yourself">Check yourself</h2>
+<p>You're ready for Chapter 03 when you can answer:</p>
+<ul><li>What's the difference between <code class="code-inline">let</code> and <code class="code-inline">const</code>?</li><li>What are the three data types from this chapter, and how do you write each?</li><li>What does <code class="code-inline">=</code> actually do?</li><li>Why does <code class="code-inline">"5" + 1</code> not give <code class="code-inline">6</code>?</li></ul>
+<p>Onward to <a href="03-loops.html">Chapter 03: Loops</a>.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="01-browser-basics.html">Chapter 01: Your Free Browser Workbench</a></div>
+  <div><a href="03-loops.html">Chapter 03: Loops — Teaching the Computer to Repeat</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

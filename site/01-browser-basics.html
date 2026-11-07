@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 01: Your Free Browser Workbench — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-01-your-free-browser-workbench">Chapter 01: Your Free Browser Workbench</h1>
+<p>You don't need to install anything. Every browser — Chrome, Firefox, Edge, Safari — already contains a place where you can type and run code. It's called the <strong>console</strong>, and it's where this whole guide takes place.</p>
+<h2 id="opening-the-console">Opening the console</h2>
+<ol><li>Open your browser.</li><li>Open any web page (a blank "New Tab" page is fine).</li><li>Press <strong>F12</strong> (or right-click anywhere and choose <strong>Inspect</strong>, or press</li></ol>
+<p><strong>Cmd+Option+I</strong> on a Mac).</p>
+<ol><li>Find the <strong>Console</strong> tab and click it.</li></ol>
+<p>You'll see a blinking cursor after a <code class="code-inline">&gt;</code> symbol. That's your prompt. The console is asking: "What should I run?"</p>
+<p>A word of reassurance: you cannot break the internet from here. The console only affects the page you have open, and refreshing the page wipes anything you typed. It's a whiteboard, not a bomb.</p>
+<h2 id="your-first-line-of-code">Your first line of code</h2>
+<p>Type exactly this and press Enter:</p>
+<pre><code class="lang-js">console.log("Hello, world!")</code></pre>
+<p>You should see <code class="code-inline">Hello, world!</code> printed back at you. Congratulations — despite its size, that line is genuinely a program. It told the computer to <em>do</em> something, and the computer did it.</p>
+<p>Some things to notice:</p>
+<ul><li><code class="code-inline">console.log</code> is a <strong>function</strong> the browser gives you. You'll learn to write</li></ul>
+<p>your own functions in Chapter 04. For now, treat it as "print this out".</p>
+<ul><li>The <strong>quotation marks</strong> make <code class="code-inline">"Hello, world!"</code> a piece of <em>text</em> (called a</li></ul>
+<p>string). Text goes in quotes so the computer knows it isn't code.</p>
+<ul><li>The <strong>parentheses</strong> hold what you want printed. They're the "input slot" of</li></ul>
+<p>a function.</p>
+<p>Try a few more:</p>
+<pre><code class="lang-js">console.log("My name is Sam")
+console.log(2 + 2)
+console.log("2 + 2")</code></pre>
+<p>See the difference? <code class="code-inline">2 + 2</code> prints <code class="code-inline">4</code> — no quotes means <em>do the math</em>. <code class="code-inline">"2 + 2"</code> with quotes prints the text <code class="code-inline">2 + 2</code> — quotes means <em>say this literally</em>. That distinction (do it vs. say it) is the seed of everything that follows.</p>
+<h2 id="the-console-as-a-calculator-and-a-playground">The console as a calculator (and a playground)</h2>
+<p>Try these, one per line, and predict each answer <em>before</em> pressing Enter:</p>
+<pre><code class="lang-js">console.log(10 * 3)
+console.log(7 - 2)
+console.log(10 / 4)
+console.log(3 &gt; 2)</code></pre>
+<p>The last one prints <code class="code-inline">true</code>. That's not a typo or a string — it's a <em>boolean</em>, a value that means yes/no. You'll meet those properly in Chapter 02.</p>
+<p>Making predictions first matters. Your brain learns from the moment of "ah, I was almost right" far more than from reading an answer.</p>
+<h2 id="free-alternatives-still-no-installs">Free alternatives (still no installs)</h2>
+<p>The console is great, but a couple of free websites give you a bigger workspace where multiple lines of code live permanently:</p>
+<ul><li><strong>CodePen</strong> (codepen.io) — the HTML/CSS/JS editor box; JavaScript goes in the</li></ul>
+<p>JS panel.</p>
+<ul><li><strong>JSFiddle</strong> (jsfiddle.net) — same idea.</li><li><strong>OneCompiler</strong> or similar free online JavaScript runners — plain code, big</li></ul>
+<p>output area.</p>
+<p>These are all free, need only a browser, and need no account to start.</p>
+<h2 id="safety-habits-early">Safety habits, early</h2>
+<p>Three habits worth building from day one:</p>
+<ol><li><strong>Don't paste code into the console if you don't know what it does.</strong> Some</li></ol>
+<p>scams ask people to paste code that logs them out of or into accounts on</p>
+<p>the current page. If you can't explain a line, ask your AI what it does</p>
+<p>first. This habit is also the #1 learning habit anyway.</p>
+<ol><li><strong>Console experiments live on the current page.</strong> Refresh and they're gone.</li></ol>
+<p>When you build something you want to keep, save it as a <code class="code-inline">.js</code> text file</p>
+<p>using any plain-text editor, or keep it in a free editor site you're signed</p>
+<p>into.</p>
+<ol><li><strong>Free tools are enough for everything in this book.</strong> You should never</li></ol>
+<p>reach for your credit card to follow along.</p>
+<h2 id="exercise-11-say-hello-three-ways">Exercise 1.1 — say hello, three ways</h2>
+<p>In the console, one line each:</p>
+<ol><li>Print a greeting to yourself by name.</li><li>Print the result of <code class="code-inline">25 + 75</code>.</li><li>Print the text <code class="code-inline">"25 + 75"</code> (with quotes). Notice how it differs.</li></ol>
+<h2 id="exercise-12-predict-then-run">Exercise 1.2 — predict, then run</h2>
+<p>For each line below, write down your prediction, then run it:</p>
+<pre><code class="lang-js">console.log(8 - 3)
+console.log("8 - 3")
+console.log(3 + 3 * 2)
+console.log((3 + 3) * 2)</code></pre>
+<p>If any prediction surprised you, that's gold — put it in your learning log.</p>
+<h2 id="try-asking-your-ai">Try asking your AI</h2>
+<ul><li>"I typed <code class="code-inline">console.log("Hello")</code> and nothing happened. What are the most</li></ul>
+<p>common reasons a beginner's first console line fails? Ask me questions</p>
+<p>instead of giving me the whole answer."</p>
+<ul><li>"Give me three console.log exercises for a day-one beginner, ranked from</li></ul>
+<p>easiest to hardest. Check my answers when I type them."</p>
+<ul><li>"What does the word 'string' mean in JavaScript? Explain it in one sentence</li></ul>
+<p>and then give me one example."</p>
+<h2 id="check-yourself">Check yourself</h2>
+<p>You're ready for Chapter 02 when you can answer:</p>
+<ul><li>How do I open the console?</li><li>Why does <code class="code-inline">2 + 2</code> and <code class="code-inline">"2 + 2"</code> in the console act differently?</li><li>Why should I never paste code I don't understand?</li></ul>
+<p>Go to <a href="02-variables.html">Chapter 02: Variables</a> when you're ready.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="00-welcome.html">Welcome: You Can Learn to Code</a></div>
+  <div><a href="02-variables.html">Chapter 02: Variables — Teaching the Computer to Remember</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

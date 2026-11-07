@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 04: Functions — Teaching the Computer a New Trick — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-04-functions-teaching-the-computer-a-new-trick">Chapter 04: Functions — Teaching the Computer a New Trick</h1>
+<p>A <strong>function</strong> is a named recipe: a set of steps you write once, give a name, and ask for by name whenever you need it. You've already been <em>using</em> them — <code class="code-inline">console.log</code> is a function someone else wrote. This chapter you write your own.</p>
+<h2 id="your-first-function">Your first function</h2>
+<p>Type this in the console:</p>
+<pre><code class="lang-js">function greet() {
+  console.log("Hello there!")
+}
+
+greet()
+greet()</code></pre>
+<p>Three things happened:</p>
+<ol><li><code class="code-inline">function greet() { ... }</code> <strong>defines</strong> the recipe, but runs <em>nothing</em>.</li></ol>
+<p>The computer just takes notes: "if anyone says <code class="code-inline">greet()</code>, here's the plan."</p>
+<ol><li>The lines inside the braces are the <strong>body</strong> — the steps of the recipe.</li><li><code class="code-inline">greet()</code> <strong>calls</strong> the recipe. Each call runs the whole body. Call it</li></ol>
+<p>twice, it runs twice.</p>
+<p>Defining and calling are different events. This is the single biggest "wait, what?" moment for beginners: writing the function does nothing visible; <em>calling</em> it does the work. If your function seems to "not work," first question: <strong>did I call it?</strong></p>
+<h2 id="parameters-recipes-with-blanks-to-fill">Parameters: recipes with blanks to fill</h2>
+<p><code class="code-inline">greet()</code> says the same thing every time. A <strong>parameter</strong> lets the recipe have slots that the caller fills in:</p>
+<pre><code class="lang-js">function greetPerson(name) {
+  console.log(`Hello, ${name}!`)
+}
+
+greetPerson("Sam")
+greetPerson("Dana")</code></pre>
+<p>Here <code class="code-inline">name</code> is a parameter — an empty labeled box inside the function. When you call <code class="code-inline">greetPerson("Sam")</code>, the string <code class="code-inline">"Sam"</code> goes into that box (it's called an <strong>argument</strong>, the value you pass in).</p>
+<p>Functions can take more than one parameter, with commas:</p>
+<pre><code class="lang-js">function introduce(name, job) {
+  console.log(`${name} works as a ${job}.`)
+}
+
+introduce("Dana", "RN")</code></pre>
+<p>Order matters: the first argument goes into the first parameter, second into second, like filling a form left to right.</p>
+<h2 id="return-recipes-that-hand-something-back">return: recipes that hand something back</h2>
+<p>So far our functions only <em>do</em> things (print). But the truly powerful kind <em>hands back a value</em> you can keep using. That's what <strong>return</strong> does:</p>
+<pre><code class="lang-js">function add(a, b) {
+  return a + b
+}
+
+const totalCost = add(3.5, 8.25)
+console.log(totalCost)</code></pre>
+<p><code class="code-inline">add(3.5, 8.25)</code> is an <em>expression</em> — it computes to a value — so just like <code class="code-inline">2 + 2</code>, you can store it in a variable, print it, or feed it into another function.</p>
+<p><code class="code-inline">console.log</code> vs <code class="code-inline">return</code> confuses almost everyone once, so let's be real clear:</p>
+<ul><li><code class="code-inline">console.log(...)</code> — show the human something. Nothing is handed back.</li><li><code class="code-inline">return ...</code> — hand the value back to whoever called. Nothing is shown.</li></ul>
+<p>A function with <code class="code-inline">return</code> is a fountain you can drink from. A function with only <code class="code-inline">console.log</code> is a shower over a cactus: impressive, but nothing to catch.</p>
+<h2 id="why-functions-matter-more-than-they-seem">Why functions matter more than they seem</h2>
+<p>Even with this tiny vocabulary, functions buy you three big things:</p>
+<ol><li><strong>Reuse.</strong> Write the steps once, call many times. Fix the recipe once, all</li></ol>
+<p>the calls improve.</p>
+<ol><li><strong>Names as documentation.</strong> <code class="code-inline">totalPriceWithTax(cart, taxRate)</code> reads like</li></ol>
+<p>English. Good names let code explain itself.</p>
+<ol><li><strong>Small understandable pieces.</strong> Big programs aren't harder than small</li></ol>
+<p>ones because of some magic — they're just *more pieces you already</p>
+<p>understand*. Functions are how you build big things while only ever</p>
+<p>holding one small thing in your head.</p>
+<h2 id="building-up-a-function-with-a-loop-inside">Building up: a function with a loop inside</h2>
+<p>Here's where the book's three ideas click together — a function that uses a loop, taking a parameter:</p>
+<pre><code class="lang-js">function countTo(n) {
+  for (let i = 1; i &lt;= n; i++) {
+    console.log(i)
+  }
+}
+
+countTo(3)
+countTo(5)</code></pre>
+<p>The function is the recipe "print numbers 1 through n." The loop is one of its steps. The parameter decides how far. Every real program you'll ever read is layers of this: variables feeding loops inside functions.</p>
+<h2 id="exercises">Exercises</h2>
+<h3>Exercise 4.1 — greet three people</h3>
+<p>Write <code class="code-inline">greetPerson(name)</code> and call it with three different names.</p>
+<h3>Exercise 4.2 — double it</h3>
+<p>Write <code class="code-inline">double(number)</code> which <strong>returns</strong> the number times two. Call it and store the result in a variable, then print that. Test it with 4 and with 0.</p>
+<h3>Exercise 4.3 — is short name?</h3>
+<p>Write <code class="code-inline">isShortName(name)</code> that <strong>returns</strong> <code class="code-inline">true</code> if the name has 4 or fewer letters and <code class="code-inline">false</code> otherwise. Hint from Chapter 02: strings have a <code class="code-inline">length</code>: <code class="code-inline">"Sam".length</code> is <code class="code-inline">3</code>. Then call it with <code class="code-inline">"Sam"</code> and <code class="code-inline">"Dana"</code> and print the results.</p>
+<h3>Exercise 4.4 — a sinking feeling (finding the classic bug)</h3>
+<p>What's wrong with this? Predict, run, fix:</p>
+<pre><code class="lang-js">function triple(x) {
+  console.log(x * 3)
+}
+
+const nine = triple(3)
+console.log(nine)</code></pre>
+<p><code class="code-inline">nine</code> prints <code class="code-inline">undefined</code>. Because <code class="code-inline">triple</code> <em>returned nothing</em> — it showed the answer on screen but never handed a value back. This is the #1 beginner function bug. The fix is one word: change <code class="code-inline">console.log(x * 3)</code> to <code class="code-inline">return x * 3</code> (and print the <em>caller's</em> side instead).</p>
+<h2 id="try-asking-your-ai">Try asking your AI</h2>
+<ul><li>"Explain the difference between a parameter and an argument using a form</li></ul>
+<p>and a filled-in form metaphor."</p>
+<ul><li>"Give me three tiny function exercises in increasing difficulty, but don't</li></ul>
+<p>show me the solutions until I've typed my attempt."</p>
+<ul><li>"Here is a function I wrote. It prints the answer but the variable it was</li></ul>
+<p>assigned to is undefined. Guide me to see why — ask me questions instead of</p>
+<p>telling me."</p>
+<h2 id="check-yourself">Check yourself</h2>
+<ul><li>What's the difference between <em>defining</em> a function and <em>calling</em> one?</li><li>What's the difference between a parameter and an argument?</li><li>What does <code class="code-inline">return</code> do that <code class="code-inline">console.log</code> doesn't?</li></ul>
+<p>Now the two "glue" chapters that travel with you long after syntax: <a href="05-ai-as-tutor.html">Chapter 05: Using AI as a Tutor</a>.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="03-loops.html">Chapter 03: Loops — Teaching the Computer to Repeat</a></div>
+  <div><a href="05-ai-as-tutor.html">Chapter 05: Using AI as a Tutor (Not an Answer Machine)</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

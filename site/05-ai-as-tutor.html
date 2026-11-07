@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 05: Using AI as a Tutor (Not an Answer Machine) — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-05-using-ai-as-a-tutor-not-an-answer-machine">Chapter 05: Using AI as a Tutor (Not an Answer Machine)</h1>
+<p>Everything so far assumed you have an AI alongside you. This chapter is about <em>how</em> to use it — because the same tool can be a gym that makes you stronger, or an elevator that takes you nowhere slowly.</p>
+<p>Two modes of using AI exist:</p>
+<ul><li><strong>Answer machine mode</strong>: "write me a program that does X." You paste, it</li></ul>
+<p>runs, you shrug, nothing sticks.</p>
+<ul><li><strong>Tutor mode</strong>: the AI explains concepts, gives hints, asks <em>you</em> questions,</li></ul>
+<p>and checks <em>your</em> work. You get stuck, wrestle, and figure it out — which is</p>
+<p>the entire mechanism by which learning happens.</p>
+<p>This book asks you to live in tutor mode. Here's the vocabulary to make that practical.</p>
+<h2 id="the-core-principle-keep-the-cognitive-load-on-your-side">The core principle: keep the cognitive load on your side</h2>
+<p>There is a real phenomenon in learning science: when someone hands you a finished answer, your brain skims it, feels recognition ("yeah, I get it"), and moves on. Recognition feels like knowing. It isn't. The feeling of real learning is <em>effortful recall</em> — you reaching into your own head for the step.</p>
+<p>So the tutor-level prompts are all designed around one move: <strong>make the AI give you less, make it ask you more.</strong></p>
+<h2 id="prompt-recipes-that-work">Prompt recipes that work</h2>
+<p>Each recipe is copy-pasteable — and unlike code, prompts are safe to paste. They're habits, though; you're meant to adapt them.</p>
+<h3>"Explain like I'm twelve, then check me"</h3>
+<blockquote><p>Explain what a <code class="code-inline">for</code> loop is in JavaScript like I'm 12, with an everyday metaphor. Then ask me two questions to check I actually understood.</p></blockquote>
+<p>The "ask me two questions" tail is the key. It converts a lecture into a conversation. If you can't answer the questions, ask for a <em>different</em> metaphor, not a longer explanation. Metaphors either click in one sentence or don't; stacking more words on a broken metaphor helps nothing.</p>
+<h3>"Hint, not answer"</h3>
+<blockquote><p>I'm trying to make a loop that prints 1 to 5 but mine prints 1 to 6. Ask me what I wrote and gently guide me to the bug with questions. Don't fix it for me unless I ask.</p></blockquote>
+<p>One sentence — "don't fix it unless I ask" — changes the AI's entire posture. Beginners underestimate how often they <em>would</em> have figured it out with one question's worth of friction removed.</p>
+<h3>"Explain this error to me"</h3>
+<blockquote><p>I got this error: <code class="code-inline">SyntaxError: missing ) after argument list</code>. Explain what it means in plain English, show one tiny example of code that causes it, and one line of how the fix usually looks.</p></blockquote>
+<p>This is the single most valuable habit in this whole book. When code breaks (and it will, hourly), pointing the error message at the AI and asking for plain-English translation turns every error into a private lesson.</p>
+<h3>"Quiz me"</h3>
+<blockquote><p>Quiz me on JavaScript variables and loops. One question at a time, wait for my answer, tell me if I'm right, and adjust difficulty to my level. Start easy.</p></blockquote>
+<p>Your AI becomes a flashcard deck that adapts. Ten minutes of this beats an hour of rereading.</p>
+<h3>"Explain it back"</h3>
+<blockquote><p>I'm going to explain what <code class="code-inline">return</code> does in my own words. Tell me where my explanation is wrong or fuzzy. [your explanation here]</p></blockquote>
+<p>This is the "explain it back" technique, and it's brutal in the best way. Explaining something out loud exposes every gap that skimming hid. The AI's job is to poke exactly where you're fuzzy.</p>
+<h3>"Three versions"</h3>
+<blockquote><p>Give me three <em>different</em> metaphors for what a variable is, one sentence each. I'll pick the one that clicks.</p></blockquote>
+<p>AIs are tireless at generating alternatives. When one explanation isn't landing, three fresh phrasings usually beats one long one.</p>
+<h2 id="the-copy-paste-checklist">The copy-paste checklist</h2>
+<p>Sometimes you <em>will</em> take code from the AI — that's normal for real snippets and fine. Before you keep it, run it through this checklist. If any answer is no, you're in answer-machine mode, back up:</p>
+<ol><li>______ Can I say out loud what this code does, line by line?</li><li>______ Could I rewrite it myself from a blank console, with the AI closed?</li><li>______ Did I try at least one variation myself (change a name, a number,</li></ol>
+<p>the order)?</p>
+<ol><li>______ Do I know what would happen if one specific line were deleted?</li></ol>
+<p>Line 4 is a favorite. Ask the AI: "What would break if line 3 weren't here?" Understanding a line's <em>absence</em> teaches its <em>purpose</em>.</p>
+<h2 id="a-rule-for-when-youre-stuck">A rule for when you're stuck</h2>
+<p>Stuck for more than ~10 minutes without progress? Change strategies:</p>
+<ul><li>wrong move: reading the next tutorial chapter hoping it will clarify the</li></ul>
+<p>last one</p>
+<ul><li>right move: tell the AI exactly what you tried and <em>where</em> you're stuck:</li></ul>
+<p>"I expected X, I got Y, here's my code" and let it interview you.</p>
+<p>"I tried A, expected X, got Y" is the magic sentence of debugging — you'll meet it again next chapter.</p>
+<h2 id="what-done-with-help-looks-like">What "done with help" looks like</h2>
+<p>A useful benchmark: you should be able to close the AI and, unaided, write:</p>
+<ul><li>a variable of each type, and print a template-literal sentence</li><li>a <code class="code-inline">for</code> loop printing 1 to 10</li><li>a function that takes a parameter and returns a value</li></ul>
+<p>If you can do those cold, Chapters 02–04 aren't just in your history — they're in your head. Sprinkle these three checks into any AI quiz session.</p>
+<p>On to <a href="06-when-code-breaks.html">Chapter 06: When Code Breaks</a> — the chapter that makes everything before it survivable.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="04-functions.html">Chapter 04: Functions — Teaching the Computer a New Trick</a></div>
+  <div><a href="06-when-code-breaks.html">Chapter 06: When Code Breaks</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

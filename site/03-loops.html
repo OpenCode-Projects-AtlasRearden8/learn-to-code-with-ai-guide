@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 03: Loops — Teaching the Computer to Repeat — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-03-loops-teaching-the-computer-to-repeat">Chapter 03: Loops — Teaching the Computer to Repeat</h1>
+<p>Computers have exactly one superpower: doing the same small step over and over, insanely fast, without getting bored. A <strong>loop</strong> is how you borrow that superpower.</p>
+<p>If you found yourself copy-pasting <code class="code-inline">console.log("line")</code> three times in a row in Chapter 01, you already felt the problem a loop solves. Whenever you're about to repeat yourself, a loop usually exists to say "do that N times" once.</p>
+<h2 id="the-for-loop-repeat-a-known-number-of-times">The for loop: repeat a known number of times</h2>
+<p>Type this in the console:</p>
+<pre><code class="lang-js">for (let i = 1; i &lt;= 5; i++) {
+  console.log(i)
+}</code></pre>
+<p>This prints <code class="code-inline">1</code> through <code class="code-inline">5</code>, one per line. The ingredients on the first line are worth naming, because every <code class="code-inline">for</code> loop you'll ever write has them:</p>
+<ol><li><code class="code-inline">let i = 1</code> — the <strong>start</strong>: make a counter box <code class="code-inline">i</code>, begin at 1.</li><li><code class="code-inline">i &lt;= 5</code> — the <strong>keep-going test</strong>: as long as this is true, keep looping.</li><li><code class="code-inline">i++</code> — the <strong>step</strong>: after each pass, make <code class="code-inline">i</code> one bigger.</li><li><code class="code-inline">{ ... }</code> — the <strong>body</strong>: the thing to do each pass.</li></ol>
+<p>The curly braces <code class="code-inline">{ }</code> are the loop's hands, wrapping around everything it should repeat.</p>
+<p>A very common beginner mix-up: writing <code class="code-inline">i</code> inside the body but not realizing <code class="code-inline">i</code> <em>changes each pass</em>. Watch:</p>
+<pre><code class="lang-js">for (let i = 1; i &lt;= 3; i++) {
+  console.log(`Pass number ${i}`)
+}</code></pre>
+<p>Prints three lines with <code class="code-inline">1</code>, <code class="code-inline">2</code>, <code class="code-inline">3</code> inside. The body runs three separate times, and <code class="code-inline">i</code> has a slightly different value each time.</p>
+<h2 id="loops-over-things-you-can-count">Loops over "things you can count"</h2>
+<p>Counting 1-to-5 is cute, but loops shine when the count comes from real life. Eleven dishes to wash? A loop. 30 charts to review, one at a time? A loop. (A loop would wash them, if dishes could be washed by code.)</p>
+<pre><code class="lang-js">const daysUntilDayOff = 4
+for (let day = 1; day &lt;= daysUntilDayOff; day++) {
+  console.log(`Day ${day}: still going.`)
+}
+console.log("Day off!")</code></pre>
+<p>Notice the "Day off!" line is <em>outside</em> the braces, so it runs once, after the loop finishes. That in-and-out of the braces is a real skill — watch where lines live and why.</p>
+<h2 id="the-while-loop-repeat-until-something-happens">The while loop: repeat until something happens</h2>
+<p>A <code class="code-inline">for</code> loop is best when you know how many repetitions you want. A <strong>while</strong> loop is better when you only know a <em>condition</em>:</p>
+<pre><code class="lang-js">let cups = 0
+while (cups &lt; 2) {
+  cups = cups + 1
+  console.log(`Cup of coffee number ${cups} made.`)
+}
+console.log("Okay, now I can start the day.")</code></pre>
+<p>Read it in plain English: "while it's not yet 2 cups, keep making cups." The variable <code class="code-inline">cups</code> <em>changes inside the loop</em>, which is what eventually makes the condition false and lets you out.</p>
+<h2 id="infinite-loops-the-one-scary-thing-now-disarmed">Infinite loops: the one scary thing, now disarmed</h2>
+<p>A <code class="code-inline">while</code> loop whose condition never becomes false runs forever. In a browser console this just makes the tab sluggish, and you can close the tab. That's the whole disaster possible here — annoying, not dangerous.</p>
+<p>How to avoid it: make sure <em>something inside the loop moves toward making the condition false</em>. In the coffee example, if you forgot <code class="code-inline">cups = cups + 1</code>, the loop would never end: <code class="code-inline">cups</code> would stay 0, <code class="code-inline">0 &lt; 2</code> stays true, forever.</p>
+<p>A free trick: a loop that prints as it goes shows you immediately whether it is making progress. Printing as you loop is like leaving a trail of breadcrumbs.</p>
+<h2 id="loop-vocabulary-in-one-glance">Loop vocabulary in one glance</h2>
+<ul><li><strong>iterate</strong> — to go around once. "The loop iterated five times."</li><li><strong>counter</strong> — the variable that counts the passes (<code class="code-inline">i</code> above).</li><li><strong>off-by-one</strong> — the classic mistake of looping one time too many or too</li></ul>
+<p>few (<code class="code-inline">i &lt;= 5</code> vs <code class="code-inline">i &lt; 5</code>). Everyone makes this. Yours will not be special,</p>
+<p>and the fix is usually obvious once you print the values.</p>
+<h2 id="exercises">Exercises</h2>
+<h3>Exercise 3.1 — countdown</h3>
+<p>Write a loop that prints 5, 4, 3, 2, 1, "Liftoff!". Hint: your start and step can both change.</p>
+<h3>Exercise 3.2 — every other number</h3>
+<p>Print the even numbers from 2 to 10. (Start at 2 and step how much?)</p>
+<h3>Exercise 3.3 — the sum</h3>
+<p>Using a loop and a <code class="code-inline">let total = 0</code> box, add up the numbers 1 to 10 and print the total at the end. If you're stumped: "total = total + i" is a pattern you saw in Chapter 02, and the loop makes you get to do it ten times.</p>
+<h3>Exercise 3.4 — a deliberate bug</h3>
+<p>Type this, watch it go bad, then fix it:</p>
+<pre><code class="lang-js">let cups = 0
+while (cups &lt; 3) {
+  console.log("Making cup of coffee.")
+}</code></pre>
+<p>What's missing? (This is the infinite loop from this chapter, in miniature. Notice how the printed lines repeat identically — no progress.)</p>
+<h2 id="try-asking-your-ai">Try asking your AI</h2>
+<ul><li>"Explain the three parts of a for loop header — start, condition, step —</li></ul>
+<p>using a treadmill metaphor."</p>
+<ul><li>"Quiz me on loops: invent a for loop with a deliberate mistake (off-by-one</li></ul>
+<p>or a missing step) and ask me to find it. Wait for my answer before telling</p>
+<p>me the bug."</p>
+<ul><li>"I want to print the even numbers 2 to 10. Ask me questions to help me get</li></ul>
+<p>there instead of writing it for me."</p>
+<h2 id="check-yourself">Check yourself</h2>
+<ul><li>What are the three parts of a <code class="code-inline">for</code> loop header, and what does each do?</li><li>When would you pick <code class="code-inline">while</code> over <code class="code-inline">for</code>?</li><li>What causes an infinite loop, and how do you escape one in a browser?</li></ul>
+<p>Onward to <a href="04-functions.html">Chapter 04: Functions</a>.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="02-variables.html">Chapter 02: Variables — Teaching the Computer to Remember</a></div>
+  <div><a href="04-functions.html">Chapter 04: Functions — Teaching the Computer a New Trick</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

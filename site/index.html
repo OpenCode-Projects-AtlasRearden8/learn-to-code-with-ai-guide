@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Learn to Code with AI</h1>
+  <p class="lead">A free first coding manual for absolute beginners. Three ideas —
+  <strong>variables</strong>, <strong>loops</strong>, and <strong>functions</strong> —
+  learned through tiny exercises with an AI in the tutor's seat. Everything runs in
+  the browser. No installs, no paid tools, no prior experience.</p>
+</section>
+<blockquote><p>The one rule: <strong>never keep a line of code you can't explain out
+loud.</strong> Understanding over copy-paste.</p></blockquote>
+<a class="chapter-card" href="00-welcome.html"><div class="num">00 · Start here</div><h3>Welcome: You Can Learn to Code</h3><p>How this guide works, why understanding beats copy-paste, and the one habit to start today.</p></a>
+<a class="chapter-card" href="01-browser-basics.html"><div class="num">01 · Setup</div><h3>Chapter 01: Your Free Browser Workbench</h3><p>Open the console and print Hello, world — your first program in any browser, no installs.</p></a>
+<a class="chapter-card" href="02-variables.html"><div class="num">02 · Core idea</div><h3>Chapter 02: Variables — Teaching the Computer to Remember</h3><p>Labeled boxes for strings, numbers, and booleans. let, const, and what = really means.</p></a>
+<a class="chapter-card" href="03-loops.html"><div class="num">03 · Core idea</div><h3>Chapter 03: Loops — Teaching the Computer to Repeat</h3><p>for and while loops, counting, and why the computer's superpower is not getting bored.</p></a>
+<a class="chapter-card" href="04-functions.html"><div class="num">04 · Core idea</div><h3>Chapter 04: Functions — Teaching the Computer a New Trick</h3><p>Named recipes: parameters, return values, and why defining is not calling.</p></a>
+<a class="chapter-card" href="05-ai-as-tutor.html"><div class="num">05 · Working with AI</div><h3>Chapter 05: Using AI as a Tutor (Not an Answer Machine)</h3><p>Prompt recipes that make the AI teach you — hints, quizzes, and error translations.</p></a>
+<a class="chapter-card" href="06-when-code-breaks.html"><div class="num">06 · Troubleshooting</div><h3>Chapter 06: When Code Breaks</h3><p>Reading errors calmly, the four most common messages, and console.log as a flashlight.</p></a>
+<a class="chapter-card" href="07-next-steps.html"><div class="num">07 · Where next</div><h3>Chapter 07: Next Steps — What You Can Do From Here</h3><p>Arrays, objects, first tiny projects, and free resources for the road ahead.</p></a>
+
+<footer class="pagenav">
+  <div></div>
+  <div></div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

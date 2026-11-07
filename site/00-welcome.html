@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome: You Can Learn to Code — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="welcome-you-can-learn-to-code">Welcome: You Can Learn to Code</h1>
+<p>This guide is for the person who has never written a line of code and wonders if they could. The short answer: yes. The slightly longer answer: yes, and you do not need to install anything, buy anything, or already be "a computer person" to start.</p>
+<p>Everything in this book assumes three things:</p>
+<ul><li><strong>You are a beginner.</strong> No prior experience required. We start at zero.</li><li><strong>You have a browser.</strong> That's the only tool you need. Everything runs in a</li></ul>
+<p>browser tab on any computer — no installs, no setup days.</p>
+<ul><li><strong>You have an AI to talk to.</strong> Any free AI chat will do: ChatGPT, Claude,</li></ul>
+<p>Gemini, or a local model you already run. We treat it as a patient tutor,</p>
+<p>not an answer machine.</p>
+<h2 id="what-this-guide-covers">What this guide covers</h2>
+<p>Three ideas are the backbone of almost all programming:</p>
+<ol><li><strong>Variables</strong> — ways to remember things (Chapter 02)</li><li><strong>Loops</strong> — ways to repeat things (Chapter 03)</li><li><strong>Functions</strong> — ways to bundle things so you can reuse them (Chapter 04)</li></ol>
+<p>Around those three, we walk through:</p>
+<ul><li>Chapter 01: your free browser workbench and your first line of code</li><li>Chapter 05: how to use AI as a <em>tutor</em> — hints and questions, not copy-paste</li><li>Chapter 06: what to do when code breaks (it always breaks, and that's fine)</li><li>Chapter 07: where to go next, with free resources</li></ul>
+<h2 id="the-most-important-rule-understanding-over-copy-paste">The most important rule: understanding over copy-paste</h2>
+<p>AI can write code faster than you can read it. That's a trap for a beginner. If you copy code you don't understand, you haven't learned to code — you've learned to paste.</p>
+<p>So this book has one rule you'll see again and again:</p>
+<blockquote><p>Never keep a line of code you can't explain out loud.</p></blockquote>
+<p>If you can't explain a line, ask the AI: "Why did you write that line? What would break if it weren't there?" Keep asking until you can explain it in your own words. That's not slower learning — that <em>is</em> the learning.</p>
+<h2 id="how-each-chapter-works">How each chapter works</h2>
+<p>Every chapter follows the same shape:</p>
+<ul><li><strong>The idea</strong> — a plain-English explanation using everyday metaphors</li><li><strong>Tiny examples</strong> — short and typed by hand, never pasted blindly</li><li><strong>Tiny exercises</strong> — small enough to finish in a few minutes</li><li><strong>Try asking your AI</strong> — ready-made prompts that make the AI tutor you</li><li><strong>Check yourself</strong> — a short list of things you should be able to explain</li></ul>
+<p>You never need more than 20 minutes at a sitting. Small and steady beats long and dramatic.</p>
+<h2 id="how-to-read-this-with-your-ai">How to read this with your AI</h2>
+<p>Open two things side by side:</p>
+<ol><li>This guide (in a browser tab).</li><li>A free AI chat (in another tab).</li></ol>
+<p>As you read, bring the AI in constantly. Example conversations you'll have:</p>
+<ul><li>"I don't get the difference between <code class="code-inline">let</code> and <code class="code-inline">const</code>. Explain it like I'm 12."</li><li>"Give me a tiny practice problem about loops. Don't give me the answer —</li></ul>
+<p>I'll try it and you check my work."</p>
+<ul><li>"Here's my code. It doesn't work. Don't fix it for me. Ask me questions</li></ul>
+<p>until I find the bug myself."</p>
+<p>Chapter 05 goes deep on this. It's arguably the most important chapter in the book — more important than any syntax.</p>
+<h2 id="a-note-on-tone">A note on tone</h2>
+<p>Programming has a reputation for being intimidating. Ignore that reputation. Code is just instruction-following, written carefully. Errors are not failure — they're the computer telling you exactly what it didn't understand. Chapter 06 is entirely about reading those messages kindly.</p>
+<p>You are going to feel confused sometimes. Everyone does. Confusion is not a sign you're bad at this. It's a sign you're at the edge of what you know, which is exactly where learning happens.</p>
+<h2 id="one-habit-to-start-today">One habit to start today</h2>
+<p>Keep a <strong>learning log</strong>: a plain text file or notebook where you write two lines at the end of each session:</p>
+<ul><li>One thing I learned today</li><li>One thing that confused me today</li></ul>
+<p>The confusions are your homework questions for the AI tomorrow. This tiny habit does more than any course.</p>
+<p>Ready? Go to <a href="01-browser-basics.html">Chapter 01: Your Free Browser Workbench</a>.</p>
+<footer class="pagenav">
+  <div></div>
+  <div><a href="01-browser-basics.html">Chapter 01: Your Free Browser Workbench</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>

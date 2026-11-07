@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 06: When Code Breaks — Learn to Code with AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    background: #faf7f2;
+    color: #2b2b2b;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header.site { background: #2f4858; color: #fdfbf7; }
+  header.site .wrap { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+  header.site a { color: #fdfbf7; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  header.site a:hover { text-decoration: underline; }
+  header.site .tagline { opacity: 0.85; font-size: 0.95rem; margin-top: 0.25rem; }
+  h1, h2, h3 { line-height: 1.25; color: #1f344d; }
+  h1 { font-size: 2rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid #e5ded2; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+  code, pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .code-inline { background: #efe9df; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.92em; }
+  pre {
+    background: #2b2b33;
+    color: #e8e6e3;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  blockquote {
+    margin: 1.2rem 0; padding: 0.85rem 1.2rem;
+    border-left: 4px solid #6b8e9c; background: #f1ede4;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin: 0.2rem 0; }
+  a { color: #2f5d75; }
+  hr { border: none; border-top: 1px solid #e5ded2; margin: 2.5rem 0; }
+  footer.pagenav {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid #e5ded2;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer.pagenav a { font-weight: 600; }
+  .meta { color: #7a7367; font-size: 0.9rem; margin-top: 3rem; }
+  .chapter-card {
+    border: 1px solid #e5ded2; border-radius: 10px; padding: 1rem 1.25rem;
+    margin: 0.9rem 0; background: #fffdf9; display: block; text-decoration: none; color: inherit;
+  }
+  .chapter-card:hover { border-color: #6b8e9c; }
+  .chapter-card .num { color: #6b8e9c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .chapter-card h3 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+  .chapter-card p { margin: 0; color: #575046; font-size: 0.95rem; }
+  .hero { padding: 1rem 0 0.5rem; }
+  .hero h1 { margin-top: 0.5rem; font-size: 2.3rem; }
+  .lead { font-size: 1.1rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1b19; color: #e6e2da; }
+    h2 { border-bottom-color: #3a372f; }
+    .code-inline, blockquote { background: #262420; }
+    blockquote { border-left-color: #6b8e9c; }
+    hr { border-top-color: #3a372f; }
+    .chapter-card, pre { background: #242220; border-color: #3a372f; }
+    .chapter-card { color: #e6e2da; }
+    .chapter-card p { color: #b6b0a6; }
+    a { color: #9cc3d8; }
+    footer.pagenav { border-top-color: #3a372f; }
+    .meta { color: #8f887c; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html">Learn to Code with AI</a>
+    <div class="tagline">Variables, loops &amp; functions — for absolute beginners, with AI as a patient tutor</div>
+  </div>
+</header>
+<main class="wrap">
+<h1 id="chapter-06-when-code-breaks">Chapter 06: When Code Breaks</h1>
+<p>Let's set expectations honestly: your code will break. Often. Several times per hour on real projects. If you expected broken code to mean you're failing at this — breathe. Broken code is not the deviation from programming; broken code <em>is</em> programming. The skill you build across a career isn't "writing code that never breaks." It's <strong>getting calm and getting curious</strong>.</p>
+<p>Professionals who seem relaxed about errors aren't brave — they've just debugged enough to know errors are almost always small and local. That calm is learnable, and this chapter is the manual.</p>
+<h2 id="the-mindset-errors-are-information-not-judgment">The mindset: errors are information, not judgment</h2>
+<p>Read the two ways of receiving an error:</p>
+<ul><li>"I got an error. I'm bad at this."</li><li>"I got an error. The computer is telling me something. Let's read it."</li></ul>
+<p>The second one is rote-learnable. An error message is the computer doing something genuinely kind: it stops, it points at the problem, and it names it. No human teacher interrupting you constantly, tagging the exact sentence you got wrong, would be this efficient. Errors are the fastest feedback loop you'll ever get. Beginners run from errors; experienced people run <em>toward</em> them, because an error means you're seconds from progress.</p>
+<h2 id="anatomy-of-an-error-message">Anatomy of an error message</h2>
+<p>Here's a real one:</p>
+<pre><code class="lang-text">Uncaught TypeError: Assignment to constant variable.</code></pre>
+<p>Parse it in three parts:</p>
+<ol><li><strong>Type</strong> — <code class="code-inline">TypeError</code> (what <em>kind</em> of problem)</li><li><strong>Message</strong> — "Assignment to constant variable." (what happened)</li><li><strong>Location</strong> — browsers also show the file and line, like <code class="code-inline">chapter.js:12</code></li></ol>
+<p>Half of debugging is just reading all three instead of panicking at the first scary word. You will not understand every word at first. Read what you can, and paste the rest into the AI with "explain this error to me."</p>
+<h2 id="the-four-errors-youll-see-most">The four errors you'll see most</h2>
+<p>You can fix a startling percentage of beginner errors with just these four.</p>
+<h3>1. <code class="code-inline">SyntaxError: ...</code> — you mistyped something</h3>
+<blockquote><p><code class="code-inline">SyntaxError: missing ) after argument list</code> <code class="code-inline">SyntaxError: Unexpected end of input</code></p></blockquote>
+<p>Meaning: the sentence of code is malformed — the computer can't even <em>read</em> it, so it never ran. Look for: missing or swapped brackets/parens/quotes, a word typed wrong. Check line numbers near the reported line.</p>
+<p>Quick self-check: every <code class="code-inline">(</code> a <code class="code-inline">)</code>? Every <code class="code-inline">{</code> a <code class="code-inline">}</code>? Every unclosed quote closed? Unbalanced braces are the classic cause of "Unexpected end of input."</p>
+<h3>2. <code class="code-inline">ReferenceError: X is not defined</code> — spelling or timing</h3>
+<pre><code class="lang-js">cosole.log("Hi")</code></pre>
+<blockquote><p><code class="code-inline">Uncaught ReferenceError: cosole is not defined</code></p></blockquote>
+<p>Meaning: the name doesn't exist. 90% of the time, for beginners, it's a typo (<code class="code-inline">cosole</code> vs <code class="code-inline">console</code>). The rest is using a variable before you made it, or in a place it doesn't exist. Fix is usually one keystroke — which is also why guessing randomly at a fix rarely works: you must spot the misspelled name, not shuffle code.</p>
+<h3>3. <code class="code-inline">TypeError: X is not a function</code> / similar — wrong kind of thing</h3>
+<pre><code class="lang-js">const name = "Sam"
+name()</code></pre>
+<blockquote><p><code class="code-inline">Uncaught TypeError: name is not a function</code></p></blockquote>
+<p>Meaning: you asked a value to do a job it can't do. A string can't be called like a function; a constant can't be reassigned. The fix: check what's really inside the box (<code class="code-inline">typeof</code> from Chapter 02 helps).</p>
+<h3>4. Logic error — code runs fine, and is wrong</h3>
+<p>The sneakiest. No error at all. The loop loops, the function returns — and the answer is wrong, because a <code class="code-inline">&lt;=</code> should be <code class="code-inline">&lt;</code>, or the loop starts at 1 instead of 0. The computer did exactly what you said. You said something slightly different from what you meant.</p>
+<p>There's no error message to read for logic errors. The treatment is a tool, and here is the tool:</p>
+<h2 id="the-debuggers-best-friend-consolelog-everywhere">The debugger's best friend: console.log everywhere</h2>
+<p><code class="code-inline">console.log</code> is a flashlight. When behavior surprises you, shine light on each stage:</p>
+<pre><code class="lang-js">function sumTo(n) {
+  let total = 0
+  for (let i = 1; i &lt;= n; i++) {
+    console.log(`pass ${i}: total was ${total}`)
+    total = total + i
+    console.log(`pass ${i}: total is now ${total}`)
+  }
+  return total
+}
+
+sumTo(4)</code></pre>
+<p>Watch the values. You will almost always spot the moment the values stop being what you assumed. Programming is full of invisible states; logging renders them visible. This habit alone fixes a large share of logic bugs: you are running the same code while actually <em>looking</em> at what it is doing.</p>
+<p>When the flashlights have found the general neighborhood, then invoke the AI.</p>
+<h2 id="case-study-1-the-typo">Case study 1: the typo</h2>
+<p>You run: <code class="code-inline">console.log("Hello")</code> — wait, you typed <code class="code-inline">cosole.log("Hello")</code>, and got <code class="code-inline">ReferenceError: cosole is not defined</code>.</p>
+<p>Asked your AI: "what does 'is not defined' usually mean for a beginner?" It says: "usually a typo — check the spelling of the name." You compare letter by letter. <code class="code-inline">cosole</code>. Fix: <code class="code-inline">console</code>. Sixty seconds if you stayed calm. If you had flailed ("maybe I need a semicolon? let me move things around?"), you could have spent ten minutes and learned less.</p>
+<h2 id="case-study-2-the-missing-brace">Case study 2: the missing brace</h2>
+<p>You write:</p>
+<pre><code class="lang-js">if (isRaining) {
+  console.log("Bring an umbrella")</code></pre>
+<p>and get <code class="code-inline">SyntaxError: Unexpected end of input</code>.</p>
+<p>Plain-English translation: "I ran out of code, and something was still open." You look at your braces — they're unbalanced. Fix: add the closing <code class="code-inline">}</code>. Asking the AI to explain the message, then <em>finding it yourself</em>, teaches you the message — next time you won't need the AI for this one.</p>
+<h2 id="case-study-3-the-off-by-one">Case study 3: the off-by-one</h2>
+<p>You write a loop to print 1 to 5:</p>
+<pre><code class="lang-js">for (let i = 1; i &lt; 5; i++) {
+  console.log(i)
+}</code></pre>
+<p>It prints <code class="code-inline">1 2 3 4</code>. No error. Wrong result. Can't read an error — so you add a log: <code class="code-inline">console.log(\</code>i is ${i}, and 5 is the goal\<code class="code-inline">)</code> and watch. You see the loop stops while the condition <code class="code-inline">i &lt; 5</code> is still true at <code class="code-inline">i = 4</code>. Aha moment: you need <code class="code-inline">i &lt;= 5</code>. The bug was one character. Logic bugs are one character with big opinions.</p>
+<h2 id="the-ai-debugging-conversation-done-right">The AI debugging conversation, done right</h2>
+<p>When you hit the AI, don't say "it doesn't work, fix it." That's answer-machine mode (Chapter 05). The magic sentence:</p>
+<blockquote><p>Here's my code. Here's what I expected. Here's what I got instead. Ask me questions to help me find the problem myself.</p></blockquote>
+<p>This does two things. First, composing those three sentences ("expected X, got Y") is itself half the debugging solve — clear articulation catches bugs by itself more often than you'd expect. Second, it keeps you the one building the skill.</p>
+<p>And when the AI finds it, ask the follow-up: "How could I have spotted that myself?" The answer is usually a tool you get to keep.</p>
+<h2 id="when-youre-frustrated-the-permission-slip">When you're frustrated: the permission slip</h2>
+<p>A real thing that helps, from one human evaluator to another:</p>
+<p>Coding frustration is real, and it isn't weakness — it's your brain saying "This has been hard for X minutes with no progress." The move is not more pushing. The move:</p>
+<ol><li><strong>Two minutes of logging/predicting</strong> (flashlights, above).</li><li>If still stuck, ask the AI for <strong>one hint</strong>, not a solution.</li><li>If still stuck: stop the session. Write in your learning log what you were</li></ol>
+<p>trying and where it broke. Return tomorrow.</p>
+<p>Real phenomenon: solutions that wouldn't come are <em>waiting</em> for you the next morning. Sleep does processing we can't order on demand. Stopping is a strategy — not giving up, deferring to a smarter version of you.</p>
+<h2 id="choose-your-own-debug-checklist">Choose-your-own-debug checklist</h2>
+<p>When something breaks, in order:</p>
+<ol><li>Breathe. This is normal. (Really — this is a step; panic closes your eyes.)</li><li>Read the full error, all parts: type, message, location.</li><li>Re-read your own code near the reported line, out loud if you can.</li><li><code class="code-inline">console.log</code> the values on each side of the break.</li><li>The AI: "explain this error to me" or "here's what I expected / got; ask</li></ol>
+<p>me questions."</p>
+<ol><li>Ask: "How could I have caught this myself?"</li></ol>
+<p>Now with calm under your feet, go see the wide open country ahead: <a href="07-next-steps.html">Chapter 07: Next Steps</a>.</p>
+<footer class="pagenav">
+  <div>&larr; <a href="05-ai-as-tutor.html">Chapter 05: Using AI as a Tutor (Not an Answer Machine)</a></div>
+  <div><a href="07-next-steps.html">Chapter 07: Next Steps — What You Can Do From Here</a> &rarr;</div>
+</footer>
+</main>
+<footer class="wrap">
+  <div class="meta">Generated from <code>docs/</code> by <code>build.py</code> ·
+  <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> · MIT License</div>
+</footer>
+</body>
+</html>
